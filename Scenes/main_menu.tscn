@@ -1,8 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://uu6bogg2hgew"]
+[gd_scene load_steps=13 format=3 uid="uid://uu6bogg2hgew"]
 
 [ext_resource type="Shader" uid="uid://bmt83wf4kkyn0" path="res://Shaders/scroll.gdshader" id="1_48xlc"]
 [ext_resource type="Texture2D" uid="uid://c7xvxknssy31t" path="res://Resources/Images/Untitled-1.png" id="2_1ehe0"]
 [ext_resource type="FontFile" uid="uid://syyxrrm5qkba" path="res://Resources/Fonts/contb.ttf" id="3_1ehe0"]
+[ext_resource type="Texture2D" uid="uid://ir55nucdrgtt" path="res://Resources/Images/gabehead.png" id="4_ce3w2"]
+[ext_resource type="LabelSettings" uid="uid://dvmfv2f8dxi8g" path="res://Label Settings/nametext.tres" id="5_trj04"]
+[ext_resource type="Texture2D" uid="uid://c2p01nrukrn8o" path="res://Resources/Images/edenhead.png" id="5_yhxw7"]
+[ext_resource type="Texture2D" uid="uid://dfl3vr64nm0wx" path="res://Resources/Images/skullyhead.png" id="6_trj04"]
+[ext_resource type="Texture2D" uid="uid://l15lv53ohsv1" path="res://Resources/Images/ravihead.png" id="7_16hvj"]
+[ext_resource type="Texture2D" uid="uid://cdxqmb3yja860" path="res://Resources/Images/valkhead.png" id="8_vr1f0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ce3w2"]
 shader = ExtResource("1_48xlc")
@@ -18,6 +24,8 @@ shadow_size = 10
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(-10, 5)
 
+[sub_resource type="Theme" id="Theme_n45e2"]
+
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -26,7 +34,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="BG Color" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +43,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.856683, 0.733953, 1, 1)
 
-[node name="Pattern" type="TextureRect" parent="."]
+[node name="BG Pattern" type="TextureRect" parent="."]
 self_modulate = Color(1, 1, 1, 0.443137)
 texture_repeat = 2
 material = SubResource("ShaderMaterial_ce3w2")
@@ -48,7 +56,25 @@ grow_vertical = 2
 texture = ExtResource("2_1ehe0")
 stretch_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="ChooseFighterText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.532
+anchor_top = 0.346
+anchor_right = 0.532
+anchor_bottom = 0.346
+offset_left = -148.44
+offset_top = -17.68
+offset_right = 147.56
+offset_bottom = 18.32
+grow_horizontal = 2
+grow_vertical = 2
+text = "Choose your fighter!"
+label_settings = ExtResource("5_trj04")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FightMii" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
@@ -67,62 +93,239 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Button" type="Button" parent="."]
+[node name="GabeButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.241667
+anchor_left = 0.154167
 anchor_top = 0.640593
-anchor_right = 0.241667
-anchor_bottom = 0.640593
+anchor_right = 0.154167
+anchor_bottom = 0.641
 offset_left = -131.0
 offset_top = -127.84
 offset_right = 125.0
-offset_bottom = 128.16
+offset_bottom = 127.72
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_n45e2")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="GabeButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.001
+offset_top = -172.0
+offset_right = 146.999
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_ce3w2")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="GabeButton"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.93
+anchor_right = 0.5
+anchor_bottom = 0.93
+offset_left = -128.0
+offset_top = -18.08
+offset_right = 128.0
+offset_bottom = 17.92
+grow_horizontal = 2
+grow_vertical = 0
+text = "Gabe"
+label_settings = ExtResource("5_trj04")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="EdenButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3215
+anchor_top = 0.640593
+anchor_right = 0.3215
+anchor_bottom = 0.641
+offset_left = -127.279
+offset_top = -127.84
+offset_right = 128.721
+offset_bottom = 127.72
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Button2" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="EdenButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -172.0
+offset_right = 150.0
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_yhxw7")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="EdenButton"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.241667
+anchor_left = 0.5
+anchor_top = 0.93
+anchor_right = 0.5
+anchor_bottom = 0.93
+offset_left = -128.0
+offset_top = -18.08
+offset_right = 128.0
+offset_bottom = 17.92
+grow_horizontal = 2
+grow_vertical = 0
+text = "Eden"
+label_settings = ExtResource("5_trj04")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkullyButton" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4915
 anchor_top = 0.640593
-anchor_right = 0.241667
-anchor_bottom = 0.640593
-offset_left = 194.0
+anchor_right = 0.4915
+anchor_bottom = 0.641
+offset_left = -128.679
 offset_top = -127.84
-offset_right = 450.0
-offset_bottom = 128.16
+offset_right = 127.321
+offset_bottom = 127.72
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Button3" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="SkullyButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -152.001
+offset_top = -172.0
+offset_right = 147.999
+offset_bottom = 128.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_trj04")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="SkullyButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -36.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Skully"
+label_settings = ExtResource("5_trj04")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RaviButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.241667
-anchor_top = 0.640593
-anchor_right = 0.241667
-anchor_bottom = 0.640593
-offset_left = 519.0
-offset_top = -127.84
-offset_right = 775.0
-offset_bottom = 128.16
+anchor_left = 0.6605
+anchor_top = 0.641
+anchor_right = 0.6605
+anchor_bottom = 0.641
+offset_left = -128.159
+offset_top = -128.28
+offset_right = 127.841
+offset_bottom = 127.72
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Button4" type="Button" parent="."]
+[node name="TextureRect" type="TextureRect" parent="RaviButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -171.0
+offset_right = 150.0
+offset_bottom = 129.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_16hvj")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="RaviButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -36.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Ravioli"
+label_settings = ExtResource("5_trj04")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ValkButton" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.241667
-anchor_top = 0.640593
-anchor_right = 0.241667
-anchor_bottom = 0.640593
-offset_left = 844.0
-offset_top = -127.84
-offset_right = 1100.0
-offset_bottom = 128.16
+anchor_left = 0.83
+anchor_top = 0.641
+anchor_right = 0.83
+anchor_bottom = 0.641
+offset_left = -128.599
+offset_top = -128.28
+offset_right = 127.401
+offset_bottom = 127.72
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="ValkButton"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -31.0
+offset_right = 279.0
+offset_bottom = 256.0
+texture = ExtResource("8_vr1f0")
+expand_mode = 1
+
+[node name="Label2" type="Label" parent="ValkButton"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -128.0
+offset_top = -36.0
+offset_right = 128.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Valkyrie"
+label_settings = ExtResource("5_trj04")
+horizontal_alignment = 1
+vertical_alignment = 1

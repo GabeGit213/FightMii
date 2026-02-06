@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dvmfv2f8dxi8g"]
+
+[ext_resource type="FontFile" uid="uid://syyxrrm5qkba" path="res://Resources/Fonts/contb.ttf" id="1_cdij6"]
+
+[resource]
+font = ExtResource("1_cdij6")
+font_size = 35
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
