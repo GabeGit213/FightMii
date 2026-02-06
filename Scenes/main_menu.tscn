@@ -1,0 +1,128 @@
+[gd_scene load_steps=6 format=3 uid="uid://uu6bogg2hgew"]
+
+[ext_resource type="Shader" uid="uid://bmt83wf4kkyn0" path="res://Shaders/scroll.gdshader" id="1_48xlc"]
+[ext_resource type="Texture2D" uid="uid://c7xvxknssy31t" path="res://Resources/Images/Untitled-1.png" id="2_1ehe0"]
+[ext_resource type="FontFile" uid="uid://syyxrrm5qkba" path="res://Resources/Fonts/contb.ttf" id="3_1ehe0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ce3w2"]
+shader = ExtResource("1_48xlc")
+shader_parameter/speed = 0.1
+
+[sub_resource type="LabelSettings" id="LabelSettings_ce3w2"]
+font = ExtResource("3_1ehe0")
+font_size = 175
+font_color = Color(0.607843, 0.364706, 0.878431, 1)
+outline_size = 15
+outline_color = Color(0.992157, 0.811765, 0.980392, 1)
+shadow_size = 10
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(-10, 5)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.856683, 0.733953, 1, 1)
+
+[node name="Pattern" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.443137)
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ce3w2")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_1ehe0")
+stretch_mode = 1
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.266667
+anchor_right = 0.5
+anchor_bottom = 0.266667
+offset_left = -408.0
+offset_top = -74.0
+offset_right = 408.0
+offset_bottom = 74.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "FightMii!"
+label_settings = SubResource("LabelSettings_ce3w2")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241667
+anchor_top = 0.640593
+anchor_right = 0.241667
+anchor_bottom = 0.640593
+offset_left = -131.0
+offset_top = -127.84
+offset_right = 125.0
+offset_bottom = 128.16
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241667
+anchor_top = 0.640593
+anchor_right = 0.241667
+anchor_bottom = 0.640593
+offset_left = 194.0
+offset_top = -127.84
+offset_right = 450.0
+offset_bottom = 128.16
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241667
+anchor_top = 0.640593
+anchor_right = 0.241667
+anchor_bottom = 0.640593
+offset_left = 519.0
+offset_top = -127.84
+offset_right = 775.0
+offset_bottom = 128.16
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.241667
+anchor_top = 0.640593
+anchor_right = 0.241667
+anchor_bottom = 0.640593
+offset_left = 844.0
+offset_top = -127.84
+offset_right = 1100.0
+offset_bottom = 128.16
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
